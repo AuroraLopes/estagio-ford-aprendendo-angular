@@ -1,0 +1,20 @@
+
+
+
+<section class="main-content__carousel">
+    <h1 id="main-content__destinos__title"> Top 5 Lugares Mais Visitados:</h1>
+    <div class="main-content__top__lugares">
+      <ul class="main-content__top__lugares__list">
+        <li  *ngFor="let lugar of lugares ; let i = index" >
+          <div class="main-content__top__lugares__list__item" gIf="i === current">
+            <h1>{{lugar.name}} {{i}}</h1>
+            <img [src]="lugar.img" alt="">
+          </div>
+        </li>
+      </ul>
+      <button (click)="goToNumber(current > 0 ? current - 1 : lugares.length-1)" class="button button--previous">Prev</button>
+      <button (click)="goToNumber(current < lugares.length-1  ? current + 1 : 0)" class="button button--next">Next</button>
+    </div>
+    <button (click)="goToNumber(current > 0 ? current - 1 : lugares.length-1)" class="button button--previous">Prev</button>
+      <button (click)="goToNumber(current < lugares.length-1  ? current + 1 : 0)" class="button button--next">Next</button>
+</section>
